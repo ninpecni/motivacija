@@ -1,0 +1,136 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ff4e50, #8b0000);
+  overflow: hidden;
+}
+
+.card {
+  width: min(90vw, 700px);
+  padding: 40px 30px;
+  border-radius: 28px;
+  text-align: center;
+  background: #e10600;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  animation: float 4s ease-in-out infinite;
+}
+
+h1 {
+  margin: 0 0 18px;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  color: white;
+  animation: pulse 1.5s infinite;
+}
+
+.distance {
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  color: #ffeaea;
+  margin: 14px 0;
+}
+
+.small {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.85);
+  margin-top: 18px;
+}
+
+.bar-wrap {
+  margin-top: 24px;
+  width: 100%;
+  height: 18px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.25);
+  overflow: hidden;
+}
+
+.bar {
+  height: 100%;
+  width: 0%;
+  background: #ff1e1e;
+  border-radius: 999px;
+  transition: width 0.8s ease;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 12px;
+  background: #ff1e1e;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #cc0000;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.06);
+    opacity: 0.85;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.flames {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.flames::before,
+.flames::after {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  background: radial-gradient(circle, rgba(255,80,0,0.4) 0%, transparent 60%);
+  animation: flameMove 6s infinite ease-in-out alternate;
+}
+
+.flames::after {
+  background: radial-gradient(circle, rgba(255,140,0,0.25) 0%, transparent 70%);
+  animation-duration: 8s;
+}
+
+@keyframes flameMove {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    transform: translateY(-40px) scale(1.1);
+  }
+}
+
+/* 🔥 to je tisti "tretji del" */
+.card {
+  position: relative;
+  z-index: 1;
+}
