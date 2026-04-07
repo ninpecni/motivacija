@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>24-urna motivacija</title>
+  <link rel="stylesheet" href="style1.css" />
+</head>
+<body>
+  <div class="background-glow"></div>
+  <div class="flames"></div>
+
+  <main class="card">
+
+    <h1 id="message">Srečno, imaš to! 0/24</h1>
+
+    <p class="distance" id="distance">Do cilja še 42.00 km</p>
+
+    <p class="small" id="status">Tek se še ni začel</p>
+
+    <div class="bar-wrap">
+      <div class="bar" id="progressBar"></div>
+    </div>
+
+    <div class="button-group">
+      <button id="musicButton" onclick="toggleMusic()">🎵 Predvajaj glasbo</button>
+      <button onclick="resetTimer()">🏃‍♂️ Start</button>
+    </div>
+
+  </main>
+
+  <audio id="music" loop>
+    <source src="music.mp3" type="audio/mpeg" />
+    Tvoj brskalnik ne podpira predvajanja glasbe.
+  </audio>
+
+  <script src="script1.js"></script>
+</body>
+</html>
